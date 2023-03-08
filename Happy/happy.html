@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Happy Women's Day</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+	<style>
+		body {
+			height:650px;
+		}
+		.intro {
+			z-index:500;
+			display:flex;
+			flex-direction:column;
+			align-items:center;
+			margin:0 auto;
+			margin-top:15rem;
+			position:sticky;
+		}
+		button {
+			margin-top:1rem;
+			font-weight:700;
+			color:lightpink;
+			background-color:lightcyan;
+			border:1px solid lightpink;
+			border-radius:0.5rem;
+			padding:0.5rem 1rem;
+		}
+		button:active {
+			transform:scale(0.8);
+		}
+		.Greet {
+			line-height:2rem;
+			font-family: 'Dancing Script', cursive;		
+			margin:0.5rem 1rem;
+			font-size:22px;
+			position:absolute;
+		}
+		@media (min-width:1000px) {
+			.Greet {
+				margin:0.5rem 2rem
+			}
+		}
+		@media (min-width:700px max-width:999px) {
+			.Greet {
+				margin:0.5rem 1.5rem
+			}
+		}
+		@media (max-width:500px) {
+			.Greet {
+				font-size:20px;
+			}
+			.note {
+				left:20%;
+				width:70%;
+			}
+		}
+		span {
+			display:inline-block;
+			width:10%;
+		}
+		.nofi {
+			border:1px solid black;
+			border-radius:1rem;
+			margin:0 auto;
+			height: 20%;
+			text-align:center;
+			padding:0.5rem;
+			background-color: white;
+		}
+		.note {
+			opacity:0;
+			position:absolute;
+			top:25%;
+			left:25%;
+			background-color:#FFFFAF;
+			height:45%;
+			width:50%;
+			display:flex;
+			flex-direction:column;
+		}
+		@keyframes show {
+			0% {
+				transform:scale(0)
+			}
+			100% {
+				transform:scale(1.0);
+			}
+		}
+		.line {
+			margin:0 auto;
+			width:90%;
+			height:2rem;
+			border-bottom:1px solid black;
+		}
+		.firework-red {
+			opacity:0;
+			position: absolute;
+			top: 50%;
+			left: 20%;
+			transform: translate(-50%, -50%);
+			width: 0.5rem;
+			aspect-ratio: 1;
+			background:
+				radial-gradient(circle, red 0.5rem, #0000 0) 100% 100%,
+				radial-gradient(circle, orange 0.5rem, #0000 0) 100% 50%,
+				radial-gradient(circle, yellow 0.5rem, #0000 0) 100% 75%,
+				radial-gradient(circle, green 0.5rem, #0000 0) 75% 100%,
+				radial-gradient(circle, blue 0.5rem, #0000 0) 50% 100%,
+				radial-gradient(circle, purple 0.5rem, #0000 0) 100% 25%,
+				radial-gradient(circle, red 0.5rem, #0000 0) 25% 100%,
+				radial-gradient(circle, orange 0.5rem, #0000 0) 0% 100%,
+				radial-gradient(circle, yellow 0.5rem, #0000 0) 100% 0%,
+				radial-gradient(circle, green 0.5rem, #0000 0) 75% 0%,
+				radial-gradient(circle, blue 0.5rem, #0000 0) 25% 0%,
+				radial-gradient(circle, purple 0.5rem, #0000 0) 50% 0%,
+				radial-gradient(circle, red 0.5rem, #0000 0) 0% 50%,
+				radial-gradient(circle, orange 0.5rem, #0000 0) 0% 75%,
+				radial-gradient(circle, yellow 0.5rem, #0000 0) 0% 25%,
+				radial-gradient(circle, green 0.5rem, #0000 0) 0% 0%;
+			background-size: 0.5rem 0.5rem;
+			background-repeat:no-repeat;
+
+		}
+		.firework-grn {
+			opacity:0;
+			position: absolute;
+			top: 10%;
+			left: 40%;
+			transform: translate(-50%, -50%);
+			width: 0.5rem;
+			aspect-ratio: 1;
+			background:
+				radial-gradient(circle, green 0.5rem, #0000 0) 100% 100%,
+				radial-gradient(circle, green 0.5rem, #0000 0) 100% 50%,
+				radial-gradient(circle, green 0.5rem, #0000 0) 100% 75%,
+				radial-gradient(circle, green 0.5rem, #0000 0) 75% 100%,
+				radial-gradient(circle, green 0.5rem, #0000 0) 50% 100%,
+				radial-gradient(circle, green 0.5rem, #0000 0) 100% 25%,
+				radial-gradient(circle, green 0.5rem, #0000 0) 25% 100%,
+				radial-gradient(circle, green 0.5rem, #0000 0) 0% 100%,
+				radial-gradient(circle, green 0.5rem, #0000 0) 100% 0%,
+				radial-gradient(circle, green 0.5rem, #0000 0) 75% 0%,
+				radial-gradient(circle, green 0.5rem, #0000 0) 25% 0%,
+				radial-gradient(circle, green 0.5rem, #0000 0) 50% 0%,
+				radial-gradient(circle, green 0.5rem, #0000 0) 0% 50%,
+				radial-gradient(circle, green 0.5rem, #0000 0) 0% 75%,
+				radial-gradient(circle, green 0.5rem, #0000 0) 0% 25%,
+				radial-gradient(circle, green 0.5rem, #0000 0) 0% 0%;
+			background-size: 0.5rem 0.5rem;
+			background-repeat:no-repeat;
+
+		}
+		.firework-ylw {
+			opacity:0;
+			position: absolute;
+			top: 40%;
+			left: 60%;
+			transform: translate(-50%, -50%);
+			width: 0.5rem;
+			aspect-ratio: 1;
+			background:
+				radial-gradient(circle, yellow 0.5rem, #0000 0) 100% 100%,
+				radial-gradient(circle, yellow 0.5rem, #0000 0) 100% 50%,
+				radial-gradient(circle, yellow 0.5rem, #0000 0) 100% 75%,
+				radial-gradient(circle, yellow 0.5rem, #0000 0) 75% 100%,
+				radial-gradient(circle, yellow 0.5rem, #0000 0) 50% 100%,
+				radial-gradient(circle, yellow 0.5rem, #0000 0) 100% 25%,
+				radial-gradient(circle, yellow 0.5rem, #0000 0) 25% 100%,
+				radial-gradient(circle, yellow 0.5rem, #0000 0) 0% 100%,
+				radial-gradient(circle, yellow 0.5rem, #0000 0) 100% 0%,
+				radial-gradient(circle, yellow 0.5rem, #0000 0) 75% 0%,
+				radial-gradient(circle, yellow 0.5rem, #0000 0) 25% 0%,
+				radial-gradient(circle, yellow 0.5rem, #0000 0) 50% 0%,
+				radial-gradient(circle, yellow 0.5rem, #0000 0) 0% 50%,
+				radial-gradient(circle, yellow 0.5rem, #0000 0) 0% 75%,
+				radial-gradient(circle, yellow 0.5rem, #0000 0) 0% 25%,
+				radial-gradient(circle, yellow 0.5rem, #0000 0) 0% 0%;
+			background-size: 0.5rem 0.5rem;
+			background-repeat:no-repeat;
+		}
+		.firework-blu {
+			opacity:0;
+			position: absolute;
+			top: 30%;
+			left: 80%;
+			transform: translate(-50%, -50%);
+			width: 0.5rem;
+			aspect-ratio: 1;
+			background:
+				radial-gradient(circle, blue 0.5rem, #0000 0) 100% 100%,
+				radial-gradient(circle, blue 0.5rem, #0000 0) 100% 50%,
+				radial-gradient(circle, blue 0.5rem, #0000 0) 100% 75%,
+				radial-gradient(circle, blue 0.5rem, #0000 0) 75% 100%,
+				radial-gradient(circle, blue 0.5rem, #0000 0) 50% 100%,
+				radial-gradient(circle, blue 0.5rem, #0000 0) 100% 25%,
+				radial-gradient(circle, blue 0.5rem, #0000 0) 25% 100%,
+				radial-gradient(circle, blue 0.5rem, #0000 0) 0% 100%,
+				radial-gradient(circle, blue 0.5rem, #0000 0) 100% 0%,
+				radial-gradient(circle, blue 0.5rem, #0000 0) 75% 0%,
+				radial-gradient(circle, blue 0.5rem, #0000 0) 25% 0%,
+				radial-gradient(circle, blue 0.5rem, #0000 0) 50% 0%,
+				radial-gradient(circle, blue 0.5rem, #0000 0) 0% 50%,
+				radial-gradient(circle, blue 0.5rem, #0000 0) 0% 75%,
+				radial-gradient(circle, blue 0.5rem, #0000 0) 0% 25%,
+				radial-gradient(circle, blue 0.5rem, #0000 0) 0% 0%;
+			background-size: 0.5rem 0.5rem;
+			background-repeat:no-repeat;
+			
+		}
+		@keyframes firework {
+			0% { 
+				transform: translate(-50%, 60vh);
+				width: 0.5rem;
+				opacity: 1;
+			}
+			50% { 
+				width: 0.5rem;
+				opacity: 1;
+			}
+			100% { 
+				width: 10rem;
+				border-radius:50%; 
+				opacity: 0; 
+			}
+		}
+		.firework,
+		.firework::before,
+		.firework::after {
+			content: "";
+		}
+		.firework::before {
+			transform: translate(-50%, -50%) rotate(25deg) !important; 
+		}
+		.firework::after {
+			transform: translate(-50%, -50%) rotate(-25deg) !important;
+		}
+		.rose {
+			width:50px;
+			position:absolute;
+			top:10%;
+			left:37%;
+			opacity:0;
+			z-index:1000;
+		}
+		.heart {
+			width:80px;
+			position:absolute;
+			top:80%;
+			left:80%;
+		}
+		.rose2 {
+			width:50px;
+			position:absolute;
+			top:50%;
+			left:17%;
+			opacity:0;
+			z-index:1000;
+		}
+		.rose3 {
+			width:50px;
+			position:absolute;
+			top:40%;
+			left:57%;
+			opacity:0;
+			z-index:1000;
+		}
+		.rose4 {
+			width:50px;
+			position:absolute;
+			top:30%;
+			left:77%;
+			opacity:0;
+			z-index:1000;
+		}
+		@keyframes fall {
+			0% {
+				opacity:1;
+			}
+			100% {
+				top:100%;
+			}
+		}
+	</style>
+</head>
+<body background="background.jpg" style="background-repeat:no-repeat;background-size:1350px 700px;">
+	<main>
+		<div class="firework-ylw" id="fwk"></div>
+		<img class="rose" src="rosea.png">
+		<img class="rose2" src="rosea.png">
+		<img class="rose3" src="rosea.png">
+		<img class="rose4" src="rosea.png">
+		<div class="firework-red" id="fwk"></div>
+		<div class="firework-blu" id="fwk"></div>
+		<div class="firework-grn" id="fwk"></div>
+		<div class="firework-pik" id="fwk"></div>
+		<div class="firework-ore" id="fwk"></div>
+		<div class="firework-pur" id="fwk"></div>
+		<div class="intro">
+			<div class="nofi">Bạn có 1 tin nhắn mới</div>
+			<div>
+				<button onclick="Start()">OPEN</button>
+			</div>
+		</div>
+		<div class="note">
+			<div class="Greet"><span></span>Nhân dịp 8/3, chúng tớ xin chúc các bạn nữ 10t1 có nhiều sức khỏe, ngày càng xinh xắn và đạt được những điều bản thân mong muốn</div>
+			<img class="heart" src="heart.png">
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+		</div>
+		<div class="fill"></div>
+	</main>
+	<object data="HappyNewYear.mp3" width="0" height="0">
+		<param name="filename" value="music.mp3">
+		<param name="autostart" value="1">
+		<param name="playcount" value="false">
+	</object>
+</body>
+<script type="text/javascript">
+	const fwkred=document.querySelector(".firework-red");
+	const fwkylw=document.querySelector(".firework-ylw");
+	const fwkgrn=document.querySelector(".firework-grn");
+	const fwkblu=document.querySelector(".firework-blu");
+	const note=document.querySelector(".note");
+	const StartBtn=document.querySelector("button");
+	const Nofi_area=document.querySelector(".nofi");
+	const rose=document.querySelector(".rose");
+	const rose2=document.querySelector(".rose2");
+	const rose3=document.querySelector(".rose3");
+	const rose4=document.querySelector(".rose4");
+	const muicArea=document.querySelector(".fill");
+
+	function Start(){
+		fwkred.style="z-index:300;animation:firework 2s infinite;animation-delay:3s;";
+		fwkylw.style="z-index:300;animation:firework 3s infinite;animation-delay:2s";
+		fwkgrn.style="animation:firework 2.5s infinite;animation-delay:3.5s;";
+		fwkblu.style="z-index:300;animation:firework 4s infinite;animation-delay:-1s;";
+		Nofi_area.style="display:none";
+		note.style="opacity:1;animation:show 2s";
+		StartBtn.style="display:none";
+
+		rose2.style="animation:fall 2s infinite;animation-delay:4.5s";
+		rose.style="animation:fall 2.5s infinite;animation-delay:5s";
+		rose3.style="animation:fall 3s infinite;animation-delay:4s";
+		rose4.style="animation:fall 4s infinite;animation-delay:1.5s"
+
+		let htmls=`<audio class="music" autoplay>
+  					<source src="La-Con-Gai-That-Tuyet-Khoi-My.mp3">
+				</audio>`;
+		muicArea.innerHTML=htmls;
+	}
+</script>
+</html>
