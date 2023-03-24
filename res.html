@@ -53,11 +53,11 @@
 			},
 			body:JSON.stringify(user),
 		};
-		fetch("https://app2-3-a1059927.deta.app/user",option)
+		fetch("https://database.deta.sh/v1/c01ys6dpyyz_heJs9zCra6bQpGjvevHgBCocD8dR7Xgt/Base",option)
 	}
 
 	const block=document.querySelector("#block");
-	fetch("https://app2-3-a1059927.deta.app/user")
+	fetch("https://database.deta.sh/v1/c01ys6dpyyz_heJs9zCra6bQpGjvevHgBCocD8dR7Xgt/Base")
 		.then(function(res){
 			return res.json()
 		})
